@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.fragments.fragments
+package com.example.myapplication.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,11 +8,13 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.example.myapplication.databinding.FragmentDetailBinding
-
+import com.example.myapplication.ui.fragments.DetailFragmentArgs
 
 class DetailFragment : Fragment() {
+
     private lateinit var binding: FragmentDetailBinding
     private val args by navArgs<DetailFragmentArgs>()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

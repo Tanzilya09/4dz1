@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.fragments.fragments
+package com.example.myapplication.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,15 +8,15 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.databinding.FragmentThirdBinding
-import com.example.myapplication.model.FirstModel
+import com.example.myapplication.model.MainModel
 import com.example.myapplication.repositiry.ThirdRepositiry
-import com.example.myapplication.ui.fragments.adapters.ThirdAdapter
+import com.example.myapplication.ui.adapters.ThirdAdapter
 
 
 class ThirdFragment : Fragment() {
 
     private lateinit var binding: FragmentThirdBinding
-    private var list = mutableListOf<FirstModel>()
+    private var list = ArrayList<MainModel>()
     private val repository = ThirdRepositiry()
     private val thirdAdapter = ThirdAdapter(list)
     override fun onCreateView(
@@ -30,10 +30,10 @@ class ThirdFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initialization()
     }
+
     private fun initialization()= with(binding){
         rvThirdFragment.layoutManager= LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         list.addAll(repository.getListOfText())
         rvThirdFragment.adapter = thirdAdapter
     }
-
 }
